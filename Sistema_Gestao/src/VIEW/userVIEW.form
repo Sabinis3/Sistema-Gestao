@@ -31,10 +31,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtpassword" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
-                          <Component id="txtname" min="-2" pref="170" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="txtname" min="-2" pref="170" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
@@ -46,6 +43,10 @@
                           <Component id="btn_logar" max="32767" attributes="0"/>
                           <Component id="comb_type" max="32767" attributes="0"/>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
+                      <Component id="txtpassword" min="-2" pref="112" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="127" max="32767" attributes="0"/>
@@ -85,8 +86,6 @@
         <Property name="text" type="java.lang.String" value="Senha"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtpassword">
-    </Component>
     <Component class="javax.swing.JButton" name="btn_logar">
       <Properties>
         <Property name="text" type="java.lang.String" value="LOGAR"/>
@@ -110,6 +109,8 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="txtpassword">
     </Component>
   </SubComponents>
 </Form>
