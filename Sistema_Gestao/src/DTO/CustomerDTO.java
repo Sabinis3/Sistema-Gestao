@@ -1,5 +1,5 @@
 package DTO;
-public class Customer {
+public class CustomerDTO {
     
     int id_customer;
     String name, cpf;

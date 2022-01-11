@@ -1,5 +1,5 @@
 package DTO;
-public class Products {
+public class ProductsDTO {
     
     int id_product, qtd;
     String name, type_product;

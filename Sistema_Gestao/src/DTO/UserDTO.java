@@ -1,8 +1,8 @@
 package DTO;
-public class User {
+public class UserDTO {
     
     int id_user;
-    String name, cdf, type_user, password;
+    String name, cpf, type_user, password;
 
     public int getId_user() {
         return id_user;
@@ -20,12 +20,12 @@ public class User {
         this.name = name;
     }
 
-    public String getCdf() {
-        return cdf;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setCdf(String cdf) {
-        this.cdf = cdf;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getType_user() {

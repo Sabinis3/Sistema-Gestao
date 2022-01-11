@@ -4,19 +4,19 @@
  */
 package VIEW;
 
-import DAO.customerDAO;
-import DTO.CustomerDTO;
+import DAO.productsDAO;
+import DTO.ProductsDTO;
 
 /**
  *
  * @author acer
  */
-public class customerVIEW extends javax.swing.JFrame {
+public class productsVIEW extends javax.swing.JFrame {
 
     /**
-     * Creates new form customerVIEW
+     * Creates new form productsVIEW
      */
-    public customerVIEW() {
+    public productsVIEW() {
         initComponents();
     }
 
@@ -29,13 +29,17 @@ public class customerVIEW extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtname = new javax.swing.JTextField();
-        txtcpf = new javax.swing.JTextField();
-        ok = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        txtname = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        txttype = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtqtd = new javax.swing.JTextField();
+        btn_ok = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Nome do Produto:");
 
         txtname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -43,69 +47,75 @@ public class customerVIEW extends javax.swing.JFrame {
             }
         });
 
-        txtcpf.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setText("Tipo do produto:");
+
+        jLabel3.setText("Quantidade do produto:");
+
+        txtqtd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcpfActionPerformed(evt);
+                txtqtdActionPerformed(evt);
             }
         });
 
-        ok.setText("ok");
-        ok.addActionListener(new java.awt.event.ActionListener() {
+        btn_ok.setText("OK");
+        btn_ok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okActionPerformed(evt);
+                btn_okActionPerformed(evt);
             }
         });
-
-        jLabel1.setText("Nome do Cliente:");
-
-        jLabel2.setText("CPF do cliente:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(ok)
+                    .addComponent(btn_ok)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtcpf, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
-                        .addComponent(txtname)))
-                .addContainerGap(240, Short.MAX_VALUE))
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel1)
+                        .addComponent(txtname, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                        .addComponent(txttype)
+                        .addComponent(txtqtd)))
+                .addContainerGap(192, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(38, 38, 38)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(4, 4, 4)
-                .addComponent(txtcpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ok)
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txttype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtqtd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btn_ok)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
-        cadastrar();
-        clear();
-    }//GEN-LAST:event_okActionPerformed
-
-    private void txtcpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcpfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcpfActionPerformed
-
     private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnameActionPerformed
+
+    private void txtqtdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtqtdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtqtdActionPerformed
+
+    private void btn_okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_okActionPerformed
+       cadastrar();
+       clear();
+    }//GEN-LAST:event_btn_okActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,51 +134,57 @@ public class customerVIEW extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(customerVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(productsVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(customerVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(productsVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(customerVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(productsVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(customerVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(productsVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new customerVIEW().setVisible(true);
+                new productsVIEW().setVisible(true);
             }
         });
     }
     
     public void cadastrar(){
+        ProductsDTO objproductdto = new ProductsDTO();
         
-        CustomerDTO objcustomer = new CustomerDTO();
-
-        String name, CPF;
-
-        name= txtname.getText();
-        CPF = txtcpf.getText();
-
-        objcustomer.setName(name);
-        objcustomer.setCpf(CPF);
-
-        customerDAO objcustomerdao = new customerDAO();
-        objcustomerdao.cadastrar(objcustomer);
+        String name, type;
+        int qtd;
         
+        name = txtname.getText();
+        type = txttype.getText();
+        qtd = Integer.parseInt(txtqtd.getText());
         
-}
+        objproductdto.setName(name);
+        objproductdto.setType_product(type);
+        objproductdto.setQtd(qtd);
+        
+        productsDAO objproductsdao = new productsDAO();
+        objproductsdao.cadastrar(objproductdto);
+    
+    }
     
     public void clear(){
     txtname.setText("");
-    txtcpf.setText("");
+    txttype.setText("");
+    txtqtd.setText("");
+    
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_ok;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JButton ok;
-    private javax.swing.JTextField txtcpf;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField txtname;
+    private javax.swing.JTextField txtqtd;
+    private javax.swing.JTextField txttype;
     // End of variables declaration//GEN-END:variables
 }

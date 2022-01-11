@@ -1,5 +1,5 @@
 package DTO;
-public class Sales {
+public class SalesDTO {
     
     int id_sell, cod_product, cod_customer, qtd;
 
