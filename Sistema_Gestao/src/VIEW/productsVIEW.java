@@ -222,21 +222,13 @@ public class productsVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_txtqtdActionPerformed
 
     private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
-        if (txtname.getText().isEmpty() || txtqtd.getText().isEmpty() || txttype.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Por Favor preencha todos os campos!");
-        } else {
-            cadastrar();
-            listar();
-            clear();
-        }
+        cadastrar();
+        listar();
+        clear();
     }//GEN-LAST:event_btn_cadastrarActionPerformed
 
     private void btn_carregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_carregarActionPerformed
-        if (tb_products.getSelectedRow() == -1) {
-            JOptionPane.showMessageDialog(null, "Selecione um produto da tabela!");
-        } else {
-            carregar();
-        }
+        carregar();
     }//GEN-LAST:event_btn_carregarActionPerformed
 
     private void btn_limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limparActionPerformed
@@ -251,27 +243,15 @@ public class productsVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_voltarActionPerformed
 
     private void btn_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atualizarActionPerformed
-        if (txtid.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Por Favor selecione um produto!");
-
-        } else if (txtname.getText().isEmpty() || txtqtd.getText().isEmpty() || txttype.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Por Favor preencha todos os campos!");
-
-        } else {
-            atualizar();
-            clear();
-            listar();
-        }
+        atualizar();
+        clear();
+        listar();
     }//GEN-LAST:event_btn_atualizarActionPerformed
 
     private void btn_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_excluirActionPerformed
-        if (txtid.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Por Favor selecione um produto!");
-        } else {
-            deletar();
-            clear();
-            listar();
-        }
+        deletar();
+        clear();
+        listar();
     }//GEN-LAST:event_btn_excluirActionPerformed
 
     /**
@@ -310,45 +290,58 @@ public class productsVIEW extends javax.swing.JFrame {
     }
 
     private void cadastrar() {
-        ProductsDTO objproductdto = new ProductsDTO();
+        if (txtname.getText().isEmpty() || txtqtd.getText().isEmpty() || txttype.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por Favor preencha todos os campos!");
+        } else {
+            ProductsDTO objproductdto = new ProductsDTO();
 
-        String name, type;
-        int qtd;
+            String name, type;
+            int qtd;
 
-        name = txtname.getText();
-        type = txttype.getText();
-        qtd = Integer.parseInt(txtqtd.getText());
+            name = txtname.getText();
+            type = txttype.getText();
+            qtd = Integer.parseInt(txtqtd.getText());
 
-        objproductdto.setName(name);
-        objproductdto.setType_product(type);
-        objproductdto.setQtd(qtd);
+            objproductdto.setName(name);
+            objproductdto.setType_product(type);
+            objproductdto.setQtd(qtd);
 
-        productsDAO objproductsdao = new productsDAO();
-        objproductsdao.cadastrar(objproductdto);
+            productsDAO objproductsdao = new productsDAO();
+            objproductsdao.cadastrar(objproductdto);
+        }
 
     }
 
     private void deletar() {
-        ProductsDTO objproductdto = new ProductsDTO();
+        if (txtid.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Por Favor selecione um produto!");
+        } else {
+            ProductsDTO objproductdto = new ProductsDTO();
 
-        int id;
+            int id;
 
-        id = Integer.parseInt(txtid.getText());
+            id = Integer.parseInt(txtid.getText());
 
-        objproductdto.setId_product(id);
+            objproductdto.setId_product(id);
 
-        productsDAO objproductsdao = new productsDAO();
-        objproductsdao.deletar(objproductdto);
+            productsDAO objproductsdao = new productsDAO();
+            objproductsdao.deletar(objproductdto);
+
+        }
 
     }
 
     private void carregar() {
-        int setar = tb_products.getSelectedRow();
+        if (tb_products.getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(null, "Selecione um produto da tabela!");
+        } else {
+            int setar = tb_products.getSelectedRow();
 
-        txtid.setText(tb_products.getModel().getValueAt(setar, 0).toString());
-        txtname.setText(tb_products.getModel().getValueAt(setar, 1).toString());
-        txttype.setText(tb_products.getModel().getValueAt(setar, 2).toString());
-        txtqtd.setText(tb_products.getModel().getValueAt(setar, 3).toString());
+            txtid.setText(tb_products.getModel().getValueAt(setar, 0).toString());
+            txtname.setText(tb_products.getModel().getValueAt(setar, 1).toString());
+            txttype.setText(tb_products.getModel().getValueAt(setar, 2).toString());
+            txtqtd.setText(tb_products.getModel().getValueAt(setar, 3).toString());
+        }
 
     }
 
@@ -375,23 +368,31 @@ public class productsVIEW extends javax.swing.JFrame {
     }
 
     private void atualizar() {
-        ProductsDTO objproductdto = new ProductsDTO();
+        if (txtid.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por Favor selecione um produto!");
 
-        String name, type;
-        int qtd, id;
+        } else if (txtname.getText().isEmpty() || txtqtd.getText().isEmpty() || txttype.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por Favor preencha todos os campos!");
 
-        name = txtname.getText();
-        type = txttype.getText();
-        qtd = Integer.parseInt(txtqtd.getText());
-        id = Integer.parseInt(txtid.getText());
+        } else {
+            ProductsDTO objproductdto = new ProductsDTO();
 
-        objproductdto.setName(name);
-        objproductdto.setType_product(type);
-        objproductdto.setQtd(qtd);
-        objproductdto.setId_product(id);
+            String name, type;
+            int qtd, id;
 
-        productsDAO objproductsdao = new productsDAO();
-        objproductsdao.atualizar(objproductdto);
+            name = txtname.getText();
+            type = txttype.getText();
+            qtd = Integer.parseInt(txtqtd.getText());
+            id = Integer.parseInt(txtid.getText());
+
+            objproductdto.setName(name);
+            objproductdto.setType_product(type);
+            objproductdto.setQtd(qtd);
+            objproductdto.setId_product(id);
+
+            productsDAO objproductsdao = new productsDAO();
+            objproductsdao.atualizar(objproductdto);
+        }
 
     }
 
