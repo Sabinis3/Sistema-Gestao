@@ -165,7 +165,10 @@ public class userVIEW extends javax.swing.JFrame {
             ResultSet resultuser = objuserdao.verificar(objuserdto);
             
             if(resultuser.next()){
-                JOptionPane.showMessageDialog(null, "Login Correto");
+                menuVIEW objmenu= new menuVIEW();
+                objmenu.setVisible(true);
+                
+                dispose();
             
             }else{
             JOptionPane.showMessageDialog(null, "Login Incorreto");
