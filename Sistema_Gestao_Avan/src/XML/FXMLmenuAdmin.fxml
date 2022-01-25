@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLmenuAdminController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="500.0" prefWidth="200.0" style="-fx-background-color: #50e1ff;">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../images/caixas.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="label_user" text="Nome do Usuário" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn_produtos" mnemonicParsing="false" onAction="#trocarpane" prefHeight="25.0" prefWidth="210.0" style="-fx-background-color: #50e1ff;" text="Produtos" textFill="#323030">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="40.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_fornecedores" mnemonicParsing="false" onAction="#trocarpane" prefHeight="25.0" prefWidth="207.0" style="-fx-background-color: #50e1ff;" text="Fornecedores">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_clientes" mnemonicParsing="false" onAction="#trocarpane" prefHeight="25.0" prefWidth="213.0" style="-fx-background-color: #50e1ff;" text="Clientes">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button layoutX="10.0" layoutY="348.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="213.0" style="-fx-background-color: #50e1ff;" text="Sair">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <StackPane layoutX="200.0" prefHeight="500.0" prefWidth="700.0">
+         <children>
+            <Pane fx:id="pn_produtos" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #8390ff;">
+               <children>
+                  <VBox fillWidth="false" layoutY="246.0" prefHeight="254.0" prefWidth="700.0">
+                     <children>
+                        <GridPane prefHeight="256.0" prefWidth="383.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="ID" />
+                              <TextField fx:id="txt_id_products" editable="false" GridPane.columnIndex="1" />
+                              <Label layoutX="100.0" layoutY="20.0" text="Nome" GridPane.rowIndex="1" />
+                              <TextField fx:id="txt_nome_products" layoutX="202.0" layoutY="16.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label layoutX="100.0" layoutY="20.0" text="Tipo" GridPane.rowIndex="2" />
+                              <TextField fx:id="txt_type_products" layoutX="202.0" layoutY="51.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label layoutX="100.0" layoutY="16.0" text="Quantidade" GridPane.rowIndex="3" />
+                              <Label layoutX="100.0" layoutY="16.0" text="Código do Provedor" GridPane.rowIndex="4" />
+                              <TextField fx:id="txt_qtd_products" layoutX="202.0" layoutY="12.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="txt_cod_products" layoutX="202.0" layoutY="12.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="384.0" layoutY="246.0" prefHeight="254.0" prefWidth="316.0">
+                     <children>
+                        <Button fx:id="btn_cadastrar" alignment="CENTER" mnemonicParsing="false" onAction="#cadastrar_products" prefHeight="25.0" prefWidth="162.0" text="CADASTRAR">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#atualizar_produdcts" prefHeight="25.0" prefWidth="162.0" text="ATUALIZAR">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#deletar_products" prefHeight="25.0" prefWidth="162.0" text="EXCLUIR">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btn_carregar" alignment="CENTER" layoutX="87.0" layoutY="70.0" mnemonicParsing="false" onAction="#carregarcampos_products" prefHeight="25.0" prefWidth="162.0" text="CARREGAR">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btn_limpar" alignment="CENTER" layoutX="87.0" layoutY="207.0" mnemonicParsing="false" onAction="#limpar_campos_produdcts" prefHeight="25.0" prefWidth="162.0" text="LIMPAR CAMPOS">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="247.0" prefWidth="700.0">
+                     <children>
+                        <TableView fx:id="tb_products" prefHeight="247.0" prefWidth="700.0">
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </HBox>
+               </children></Pane>
+            <Pane fx:id="pn_fornecedores" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #8390ff;">
+               <children>
+                  <VBox alignment="CENTER" fillWidth="false" layoutY="246.0" prefHeight="161.0" prefWidth="669.0">
+                     <children>
+                        <GridPane prefHeight="154.0" prefWidth="388.0">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="ID" />
+                              <TextField fx:id="txt_id_provider" editable="false" GridPane.columnIndex="1" />
+                              <Label layoutX="100.0" layoutY="20.0" text="Nome" GridPane.rowIndex="1" />
+                              <TextField fx:id="txt_name_provider" layoutX="202.0" layoutY="16.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label layoutX="100.0" layoutY="20.0" text="Contato" GridPane.rowIndex="2" />
+                              <TextField fx:id="txt_contact_provider" layoutX="202.0" layoutY="51.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="247.0" prefWidth="700.0">
+                     <children>
+                        <TableView fx:id="tb_providers" prefHeight="247.0" prefWidth="700.0">
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="13.0" layoutY="400.0" prefHeight="100.0" prefWidth="678.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#cadastrar_provider" prefHeight="25.0" prefWidth="132.0" text="CADASTRAR" />
+                        <Button layoutX="294.0" layoutY="48.0" mnemonicParsing="false" onAction="#atualizar_provider" prefHeight="25.0" prefWidth="132.0" text="ATUALIZAR" />
+                        <Button layoutX="370.0" layoutY="48.0" mnemonicParsing="false" onAction="#deletar_provider" prefHeight="25.0" prefWidth="132.0" text="EXCLUIR" />
+                        <Button layoutX="446.0" layoutY="48.0" mnemonicParsing="false" onAction="#carregarcampos_provider" prefHeight="25.0" prefWidth="132.0" text="CARREGAR" />
+                        <Button layoutX="370.0" layoutY="48.0" mnemonicParsing="false" onAction="#limpar_campos_provider" prefHeight="25.0" prefWidth="132.0" text="LIMPAR CAMPOS" />
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Pane fx:id="pn_customer" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #8390ff;">
+               <children>
+                  <VBox alignment="CENTER" fillWidth="false" layoutY="246.0" prefHeight="161.0" prefWidth="669.0">
+                     <children>
+                        <GridPane prefHeight="154.0" prefWidth="388.0">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="ID" />
+                              <TextField fx:id="txt_id_customer" editable="false" GridPane.columnIndex="1" />
+                              <Label layoutX="100.0" layoutY="20.0" text="Nome" GridPane.rowIndex="1" />
+                              <TextField fx:id="txt_name_customer" layoutX="202.0" layoutY="16.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label layoutX="100.0" layoutY="20.0" text="CPF" GridPane.rowIndex="2" />
+                              <TextField fx:id="txt_cpf_customer" layoutX="202.0" layoutY="51.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="247.0" prefWidth="700.0">
+                     <children>
+                        <TableView fx:id="tb_customer" prefHeight="247.0" prefWidth="700.0">
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="7.0" layoutY="400.0" prefHeight="100.0" prefWidth="678.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#cadastrar_customer" prefHeight="25.0" prefWidth="132.0" text="CADASTRAR" />
+                        <Button layoutX="294.0" layoutY="48.0" mnemonicParsing="false" onAction="#atualizar_customer" prefHeight="25.0" prefWidth="132.0" text="ATUALIZAR" />
+                        <Button layoutX="370.0" layoutY="48.0" mnemonicParsing="false" onAction="#deletar_customer" prefHeight="25.0" prefWidth="132.0" text="EXCLUIR" />
+                        <Button layoutX="446.0" layoutY="48.0" mnemonicParsing="false" onAction="#carregarcampos_customer" prefHeight="25.0" prefWidth="132.0" text="CARREGAR" />
+                        <Button layoutX="522.0" layoutY="48.0" mnemonicParsing="false" onAction="#limpar_campos_customer" prefHeight="25.0" prefWidth="132.0" text="LIMPAR CAMPOS" />
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
